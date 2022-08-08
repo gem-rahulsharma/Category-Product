@@ -4,7 +4,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "category")
@@ -18,16 +18,16 @@ public class Category {
 
     String description;
     @CreationTimestamp
-    Date createDate;
+    LocalDate createDate = LocalDate.now();
     @UpdateTimestamp
-    Date upDate;
+    LocalDate upDate = LocalDate.now();
     Boolean isActive;
     Boolean isDeleted;
 
     public Category() {
     }
 
-    public Category(int categoryId, String categoryName, String description, Date createDate, Date upDate, Boolean isActive, Boolean isDeleted) {
+    public Category(int categoryId, String categoryName, String description, LocalDate createDate, LocalDate upDate, Boolean isActive, Boolean isDeleted) {
         this.categoryId = categoryId;
         this.categoryName = categoryName;
         this.description = description;
@@ -61,19 +61,19 @@ public class Category {
         this.description = description;
     }
 
-    public Date getCreateDate() {
+    public LocalDate getCreateDate() {
         return createDate;
     }
 
-    public void setCreateDate(Date createDate) {
+    public void setCreateDate(LocalDate createDate) {
         this.createDate = createDate;
     }
 
-    public Date getUpDate() {
+    public LocalDate getUpDate() {
         return upDate;
     }
 
-    public void setUpDate(Date upDate) {
+    public void setUpDate(LocalDate upDate) {
         this.upDate = upDate;
     }
 

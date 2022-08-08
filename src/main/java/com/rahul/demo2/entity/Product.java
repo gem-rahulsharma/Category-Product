@@ -4,8 +4,8 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -18,9 +18,9 @@ public class Product {
     String productDescription;
     int price;
     @CreationTimestamp
-    Date createdAt;
+    LocalDate createdAt;
     @UpdateTimestamp
-    Date updatedAt;
+    LocalDate updatedAt;
     boolean isActive;
     boolean isDeleted;
 
@@ -31,7 +31,7 @@ public class Product {
     public Product() {
     }
 
-    public Product(int productId, String productName, String productDescription, int price, Date createdAt, Date updatedAt, boolean isActive, boolean isDeleted) {
+    public Product(int productId, String productName, String productDescription, int price, LocalDate createdAt, LocalDate updatedAt, boolean isActive, boolean isDeleted) {
         this.productId = productId;
         this.productName = productName;
         this.productDescription = productDescription;
@@ -74,19 +74,19 @@ public class Product {
         this.price = price;
     }
 
-    public Date getCreatedAt() {
+    public LocalDate getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(Date createdAt) {
+    public void setCreatedAt(LocalDate createdAt) {
         this.createdAt = createdAt;
     }
 
-    public Date getUpdatedAt() {
+    public LocalDate getUpdatedAt() {
         return updatedAt;
     }
 
-    public void setUpdatedAt(Date updatedAt) {
+    public void setUpdatedAt(LocalDate updatedAt) {
         this.updatedAt = updatedAt;
     }
 
